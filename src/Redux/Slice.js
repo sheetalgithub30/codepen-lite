@@ -11,7 +11,7 @@ const slice = createSlice({
         },
 
         SET_USER_NULL:()=>{
-           state.user = null;
+        //    state.user = null;
         },
 
     }

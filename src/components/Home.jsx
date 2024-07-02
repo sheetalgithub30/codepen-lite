@@ -7,13 +7,13 @@ import { Link, Route, Routes } from "react-router-dom";
 import Projects from "./Projects";
 import SignUp from "./SignUp";
 import { useSelector } from "react-redux";
+import UserProfileDetails from "./UserProfileDetails";
 
 function Home() {
   const [sideMenu, setSideMenu] = useState(true);
   // const[user,setUser] = useState(null);
   const user = useSelector((state)=>{return state.user});
-
-  console.log(user);
+  console.log(user.user);
   return (
     <>
     {/* sideMenu */}
@@ -37,7 +37,7 @@ function Home() {
                </div>
               </Link>  
              {
-              user &&
+              user.user &&
               <Link to={"/home/projects"} className="flex items-center justify-center gap-6">
                  <MdHome className="text-primaryText text-xl"/>
                  <p className="text-lg text-primaryText">Home</p>
@@ -63,7 +63,7 @@ function Home() {
 
            {/* profile */}
            {
-            !user && (
+            !user.user && (
         <motion.div
          whileTap={{scale:0.9}}
         className="flex items-center justify-center gap-3">
@@ -75,12 +75,8 @@ function Home() {
             )
            }
 
-            {
-            user && (
-              <div>
-
-              </div>
-            )
+          {
+            user.user && <UserProfileDetails/>
            }
 
         </div>
