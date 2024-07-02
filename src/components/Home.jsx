@@ -44,14 +44,14 @@ function Home() {
 
     {/* right component */}
       <div className="flex-1 min-h-screen max-h-screen overflow-y-scroll h-full flex flex-col 
-        items-start justify-start px-4 md:px-12 py-4 md:py-12
+        items-start justify-start px-4 md:px-12 py-4 md:py-4
       ">
         {/* top */}
         <div className="w-full flex items-center justify-between gap-3">
           {/* search */}
-          <div className="ml-4 bg-secondary w-full px-4 py-3 rounded-md flex items-center justify-center gap-3">
+          <div className="ml-4 bg-secondary w-full px-4 py-2 rounded-md flex items-center justify-center gap-3">
          <FaSearchengin className="text-2xl text-primaryText"/>
-         <input type="text" className="flex-1 px-4 py-1 text-xl bg-transparent outline-none border-none
+         <input type="text" className="flex-1 px-3 py-1 text-xl bg-transparent outline-none border-none
          text-primaryText placeholder:text-gray-600"
            placeholder="Search here..."
          ></input>
