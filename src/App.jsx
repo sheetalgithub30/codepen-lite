@@ -6,6 +6,7 @@ import { doc, setDoc } from 'firebase/firestore';
 import Spinner from './components/Spinner';
 import { useDispatch } from 'react-redux';
 import { SET_USER } from './Redux/Slice';
+import NewProject from './components/NewProject';
 
 function App() {
   const navigate = useNavigate();
@@ -45,6 +46,7 @@ function App() {
     <div className='w-screen h-screen flex items-start justify-start overflow-hidden'>
     <Routes>
       <Route path="/home/*" element={<Home/>}>Home</Route>
+      <Route path="/newProject" element={<NewProject/>}></Route>
 
       <Route path="*" element={<Navigate to={"/home"}/>}></Route>
     </Routes>
