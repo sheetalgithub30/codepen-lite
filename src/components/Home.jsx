@@ -36,7 +36,7 @@ function Home() {
               <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/codepen-logo-white%402x.png" className="h-auto w-72 object-contain"></img>
               </Link> 
               <Link to={"/newProject"}>
-               <div className="flex px-4 py-3 justify-center items-center rounded-xl border border-gray-400 cursor-pointer group hover:border-gray-200">
+               <div className="flex px-4 py-3 justify-center items-center rounded-xl border-[0.19rem] cursor-pointer group rainbow">
                 <p className=" text-gray-400 group-hover:text-gray-200 capitalize text-center">Start Coding</p>
                </div>
               </Link>  
