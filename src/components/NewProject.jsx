@@ -245,7 +245,7 @@ function NewProject() {
               </div>
               </SplitPane>
 
-          <div className="bg-white"
+          <div className="bg-[#1b1a1f] m-2"
             style={{overflow:"hidden" ,height:"100%"}}
           >
                  <iframe
