@@ -7,6 +7,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { signInWithGithHub, signInWithGoogle } from "../utils/helpers";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../Config/firebase.config";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function SignUp() {
   const [email, setEmail] = useState("");
@@ -25,6 +27,7 @@ function SignUp() {
           if(userCred){
             console.log(userCred);
           }
+
         })
         .catch((error)=>{
           // console.log(error)
@@ -45,6 +48,8 @@ function SignUp() {
       await signInWithEmailAndPassword(auth,email,password).then
       (userCred =>{
         if(userCred) console.log(userCred);
+        const notify =() =>toast.success("Login Success!!!");
+              notify();
       }).catch(error=>{
         console.log(error.message);
         if(error.message.includes("invalid-credential")){
@@ -69,6 +74,8 @@ function SignUp() {
         src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/codepen-logo-white%402x.png"
         className="h-auto w-32 object-contain opacity-50"
       ></img>
+
+      <ToastContainer/>
 
       <div className="w-full flex flex-col items-center justify-center py-4">
         <p className="py-2 text-xl text-primaryText">Join With Us !! ⭐ </p>

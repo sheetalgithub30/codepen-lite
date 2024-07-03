@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react'
 import Home from './components/Home'
 import {Routes,Route, Navigate, useNavigate} from "react-router-dom"
 import { auth, db } from './Config/firebase.config'
-import { doc, setDoc } from 'firebase/firestore';
+import { collection, doc, onSnapshot, orderBy, query, setDoc } from 'firebase/firestore';
 import Spinner from './components/Spinner';
 import { useDispatch } from 'react-redux';
-import { SET_USER } from './Redux/Slice';
+import { SET_PROJECTS, SET_USER } from './Redux/Slice';
 import NewProject from './components/NewProject';
 
 function App() {
@@ -33,6 +33,20 @@ function App() {
      });
      //clean up the listener
      return ()=>unsubscribe();
+  },[])
+
+  useEffect(()=>{
+   const projectQuery = query(
+    collection(db,"Projects"),
+    orderBy("id","desc")
+   )
+
+   const unsubscribe = onSnapshot(projectQuery,(querySnap=>{
+    const projectList = querySnap.docs.map(doc=> doc.data())
+    dispatch(SET_PROJECTS(projectList));
+   }))
+
+   return unsubscribe;
   },[])
 
   return (

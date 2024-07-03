@@ -6,14 +6,18 @@ import {motion} from "framer-motion";
 import { Link, Route, Routes } from "react-router-dom";
 import Projects from "./Projects";
 import SignUp from "./SignUp";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import UserProfileDetails from "./UserProfileDetails";
+import { SET_SEARCH_TERM } from "../Redux/Slice";
 
 function Home() {
   const [sideMenu, setSideMenu] = useState(true);
   // const[user,setUser] = useState(null);
-  const user = useSelector((state)=>{return state.user});
-  console.log(user.user);
+  const user = useSelector((state)=>{return state.user.user});
+  // console.log(user);
+  const searchTerm = useSelector((state)=>state.user?.searchTerm ? state.user?.searchTerm : "");
+
+  const dispatch = useDispatch();
   return (
     <>
     {/* sideMenu */}
@@ -37,7 +41,7 @@ function Home() {
                </div>
               </Link>  
              {
-              user.user &&
+              user &&
               <Link to={"/home/projects"} className="flex items-center justify-center gap-6">
                  <MdHome className="text-primaryText text-xl"/>
                  <p className="text-lg text-primaryText">Home</p>
@@ -55,15 +59,18 @@ function Home() {
           {/* search */}
           <div className="ml-4 bg-secondary w-full px-4 py-2 rounded-md flex items-center justify-center gap-3">
          <FaSearchengin className="text-2xl text-primaryText"/>
-         <input type="text" className="flex-1 px-3 py-1 text-xl bg-transparent outline-none border-none
+         <input type="text"
+         value={searchTerm}
+         className="flex-1 px-3 py-1 text-xl bg-transparent outline-none border-none
          text-primaryText placeholder:text-gray-600"
            placeholder="Search here..."
+           onChange={(e)=>dispatch(SET_SEARCH_TERM(e.target.value))}
          ></input>
           </div>
 
            {/* profile */}
            {
-            !user.user && (
+            !user && (
         <motion.div
          whileTap={{scale:0.9}}
         className="flex items-center justify-center gap-3">
@@ -76,7 +83,7 @@ function Home() {
            }
 
           {
-            user.user && <UserProfileDetails/>
+            user && <UserProfileDetails/>
            }
 
         </div>
