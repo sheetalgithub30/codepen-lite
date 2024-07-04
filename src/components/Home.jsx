@@ -70,7 +70,7 @@ function Home() {
 
            {/* profile */}
            {
-            !user && (
+            !user && (<>
         <motion.div
          whileTap={{scale:0.9}}
         className="flex items-center justify-center gap-3">
@@ -79,7 +79,11 @@ function Home() {
                SignUp
           </Link>
         </motion.div>
+
+        </>
+
             )
+
            }
 
           {

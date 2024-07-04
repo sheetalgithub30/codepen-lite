@@ -3,11 +3,8 @@ import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { MdDelete } from "react-icons/md";
 import {
-  FieldValue,
   deleteDoc,
-  deleteField,
   doc,
-  updateDoc,
 } from "firebase/firestore";
 import { db } from "../Config/firebase.config";
 

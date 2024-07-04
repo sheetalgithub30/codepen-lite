@@ -1,6 +1,5 @@
 import { javascript } from "@codemirror/lang-javascript";
 import CodeMirror from "@uiw/react-codemirror";
-import { update } from "firebase/database";
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -18,7 +17,7 @@ import "split-pane-react/esm/themes/default.css";
 import UserProfileDetails from "./UserProfileDetails";
 import { setDoc,doc } from "firebase/firestore";
 import { db } from "../Config/firebase.config";
-// import Alert from "./Alert";
+import Gemini from "./Gemini";
 
 function NewProject() {
   const [sizes, setSizes] = useState(["45%", "45%", "auto"]);
@@ -255,7 +254,11 @@ function NewProject() {
                  >  
                  {result}
                  </iframe>
-          </div>
+
+                 <div className="z-10 fixed bottom-3 right-4">
+                  <Gemini/>
+                 </div>
+            </div>
 
 
           </SplitPane>
