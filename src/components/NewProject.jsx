@@ -178,7 +178,7 @@ function NewProject() {
                   <FaCircleChevronDown className="text-xl text-primaryText" />
                 </div>
               </div>
-              <div className="w-full px-2">
+              <div className="w-full px-2 overflow-y-hidden">
                 <CodeMirror 
                 value={html}
                  height="100vh"
@@ -203,7 +203,7 @@ function NewProject() {
                   <FaCircleChevronDown className="text-xl text-primaryText" />
                 </div>
               </div>
-              <div className="w-full px-2">
+              <div className="w-full px-2  overflow-y-hidden">
                 <CodeMirror 
                 value={css}
                  height="100vh"
@@ -228,7 +228,7 @@ function NewProject() {
                   <FaCircleChevronDown className="text-xl text-primaryText" />
                 </div>
               </div>
-              <div className="w-full px-2">
+              <div className="w-full px-2 overflow-y-hidden">
                 <CodeMirror 
                 value={js}
                  height="100vh"

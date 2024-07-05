@@ -12,9 +12,7 @@ import { SET_SEARCH_TERM } from "../Redux/Slice";
 
 function Home() {
   const [sideMenu, setSideMenu] = useState(true);
-  // const[user,setUser] = useState(null);
   const user = useSelector((state)=>{return state.user.user});
-  // console.log(user);
   const searchTerm = useSelector((state)=>state.user?.searchTerm ? state.user?.searchTerm : "");
 
   const dispatch = useDispatch();
@@ -57,7 +55,7 @@ function Home() {
         {/* top */}
         <div className="w-full flex items-center justify-between gap-3">
           {/* search */}
-          <div className="ml-4 bg-secondary w-full px-4 py-2 rounded-md flex items-center justify-center gap-3">
+          <div className="ml-4 bg-secondary w-full p-2 rounded-md flex items-center justify-center gap-3">
          <FaSearchengin className="text-2xl text-primaryText"/>
          <input type="text"
          value={searchTerm}
@@ -79,7 +77,6 @@ function Home() {
                SignUp
           </Link>
         </motion.div>
-
         </>
 
             )
