@@ -9,7 +9,7 @@ You can also save your project to firestore.
 
 ## 📌 LIVE VIEW
 
-[]()
+[https://codepen-lite.vercel.app/](https://codepen-lite.vercel.app/)
 
 ## 📌 <span style="color:#29c4f6">Features🛒
 
@@ -21,12 +21,15 @@ You can also save your project to firestore.
 
 2. `Easy Login` --
  <ul>User can easily login .</ul>
+
 3. `AI` --
  <ul>User can take a help if needed from the AI tool present in the new project page.</ul>
+
 4. `Redux` --
    <ul>Used for state management of User,projects and search term. </ul>
 5. `Regular Rxpression` --
  <ul>Email validation is done using regex.</ul>
+ 
 6. `Projects` --
    <ul>Displays all saved projects.</ul>
 7. `New Projects` --
