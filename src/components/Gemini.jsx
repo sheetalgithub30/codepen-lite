@@ -88,7 +88,7 @@ function GeminiPrompt({
   return (
     <div
      style={{fontFamily:"cursive"}}
-    className="mb-10 bg-slate-700 p-4 rounded-3xl w-[28rem]">
+    className="mb-10 bg-slate-700 p-4 rounded-3xl w-[20rem] sm:w-[28rem]">
         <p className="text-xl p-3 font-semibold text-white"><i>Stuck in program ?? Get Help... ✨✨</i> </p>
       <div className="flex justify-evenly items-center">
       <textarea
