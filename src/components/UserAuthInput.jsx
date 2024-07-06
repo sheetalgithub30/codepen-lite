@@ -23,7 +23,7 @@ function UserAuthInput({ label, placeholder, isPass, setStateFunction, Icon ,set
   }
 
   return (
-    <div className="flex flex-col items-start justify-start gap-1">
+    <div className="flex flex-col items-start justify-start gap-1 ">
       <label className="text-sm text-gray-300">{label}</label>
       <div
         className={`flex items-center justify-center gap-3 w-72 md:w-72

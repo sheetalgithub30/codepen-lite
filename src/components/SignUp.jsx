@@ -77,10 +77,10 @@ function SignUp() {
 
       <ToastContainer/>
 
-      <div className="w-full flex flex-col items-center justify-center py-4">
-        <p className="py-2 text-xl text-primaryText">Join With Us !! ⭐ </p>
+      <div className="w-full flex flex-col items-center justify-center ">
+        <p className="py-2 text-xl text-primaryText">Join With Us !! <span className="animate-pulse">⭐</span></p>
         {/* SignUp Form */}
-        <div className="px-8 w-auto py-4 rounded-xl bg-secondary flex flex-col items-center justify-center gap-4">
+        <div className="px-8 w-auto py-4 rounded-xl bg-secondary flex flex-col items-center justify-center gap-4 border-[1px] rainbow">
           <UserAuthInput
             label="Email"
             placeholder="Email"

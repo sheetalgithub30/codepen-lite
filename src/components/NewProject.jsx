@@ -20,7 +20,7 @@ import { db } from "../Config/firebase.config";
 import Gemini from "./Gemini";
 
 function NewProject() {
-  const [sizes, setSizes] = useState(["45%", "45%", "auto"]);
+  const [sizes, setSizes] = useState(["33%", "33%", "auto"]);
   const[size,setSize] = useState(["70%","auto"]);
 
   const[html,setHtml] = useState("");

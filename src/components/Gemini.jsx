@@ -88,11 +88,11 @@ function GeminiPrompt({
   return (
     <div
      style={{fontFamily:"cursive"}}
-    className="mb-10 bg-slate-700 p-4 rounded-3xl w-96">
-        <p className="text-xl p-3 font-semibold">Stuck in program ?? Get Help... </p>
+    className="mb-10 bg-slate-700 p-4 rounded-3xl w-[28rem]">
+        <p className="text-xl p-3 font-semibold text-white"><i>Stuck in program ?? Get Help... ✨✨</i> </p>
       <div className="flex justify-evenly items-center">
       <textarea
-      className="text-wrap w-72 h-10 p-2 rounded-lg outline-none"
+      className="text-wrap w-80 h-10 p-2 rounded-lg outline-none"
         type="text"
         value={prompt}
         onChange={(e) => setPrompt(e.target.value)}

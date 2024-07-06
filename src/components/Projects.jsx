@@ -20,7 +20,7 @@ function Projects() {
       setFiltered(
         projects?.filter((project) => {
           const loweCaseItem = project?.title.toLowerCase();
-          return searchTerm
+          return searchTerm.toLowerCase()
             .split("")
             .every((letter) => loweCaseItem.includes(letter));
         })
@@ -80,7 +80,7 @@ const ProjectCard = ({ id, project, index }) => {
   rounded-md p-4 flex flex-col items-center justify-center gap-4"
     >
       <div
-        className="bg-primary w-full h-full rounded-md overflow-hidden"
+        className="bg-primary w-full h-full rounded-md overflow-hidden "
         style={{ overflow: "hidden", height: "100%" }}
       >
         <iframe
@@ -119,7 +119,7 @@ const ProjectCard = ({ id, project, index }) => {
         </div>
         <motion.div
           whileTap={{ scale: 0.9 }}
-          className="cursor-pointer ml-auto"
+          className="cursor-pointer ml-auto animate-bounce"
           onClick={() => {
             deleteProject(id);
           }}
